@@ -1,0 +1,23 @@
+name: agentic-check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Agentic setup check
+        run: bash scripts/check-agentic.sh
+
+      # BOOTSTRAP: add the real install / lint / test steps from AGENTS.md §2 below.
+      # - name: Install
+      #   run: <install command>
+      # - name: Lint
+      #   run: <lint command>
+      # - name: Test
+      #   run: <test command>

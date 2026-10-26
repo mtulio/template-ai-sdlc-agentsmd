@@ -1,0 +1,28 @@
+# Lifecycle state of this repository's agentic setup.
+# Agents read this first (see AGENTS.md §0) and update it as protocols complete.
+schema: 1
+template:
+  name: agentic-sdlc-template
+  version: 0.1.0
+  upstream: null            # e.g. github.com/<you>/agentic-sdlc-template — set during bootstrap
+
+phase: unbootstrapped       # unbootstrapped | bootstrapping | active
+bootstrapped_at: null       # ISO date, set when phase becomes active
+
+project:
+  name: null
+  type: null                # api | library | cli | web-app | service | monorepo | other
+  origin: null              # greenfield | brownfield
+  stack: []                 # e.g. [python-3.12, fastapi, postgres]
+  owners: []                # humans who approve gates
+
+sdlc:
+  rigor: null               # lite | standard | strict
+  spec_model: living        # living | flow-forward
+  next_spec_number: 1
+
+evolution:
+  revisions: 0              # incremented on every change logged in docs/memory/evolution-log.md
+  last_review: null         # ISO date of the last periodic review (EVOLVE.md §4)
+  review_every_specs: 5
+  review_every_days: 30
